@@ -3,7 +3,7 @@ echo "<pre>";
 print_r($_POST);
 echo "</pre>";
 
-$data = ($_POST["hobby"]);
+// $data = ($_POST["hobby"]);
 // $value = count($data);
 // $i = 1;
 // foreach ($data as $v) {
@@ -14,9 +14,9 @@ $data = ($_POST["hobby"]);
 //     }
 //     $i++;
 // }
-echo implode("," , $data );
+// echo implode("," , $data );
 
-echo "<br>" ;
+echo "<br>";
 ?>
 
 <!DOCTYPE html>
@@ -30,6 +30,43 @@ echo "<br>" ;
 </head>
 
 <body>
+    <?php
+
+    if (isset($_POST["submit"])) {
+
+    ?>
+        <table border="1px solid">
+            <tr>
+                <td> Name</td>
+                <td> Age</td>
+                <td> Roll_no</td>
+                <td> Date</td>
+                <td>Gender</td>
+                <td>Hobbies</td>
+                <td>Country</td>
+
+            </tr>
+            <tr>
+
+                <td> <?php echo $_POST["username"]; ?> </td>
+                <td> <?php echo $_POST["age"]; ?> </td>
+                <td> <?php echo $_POST["roll_no"]; ?> </td>
+                <td> <?php echo $_POST["dob"]; ?> </td>
+                <td> <?php echo !empty($_POST["gender"]) ?  $_POST["gender"] : ""; ?> </td>
+                <td>
+                    <?php
+                    echo !empty($_POST["hobby"]) ? implode(", ", $_POST["hobby"]) : "";
+                    ?>
+                </td>
+                <td> <?php echo $_POST["country"]; ?> </td>
+
+            </tr>
+        </table>
+        unset($_POST);
+    <?php }
+    ?>
+    <input type="file" name="file" id="">
+
     <form method="POST">
         <br>
         Name : <input type="text" name="username" placeholder="Enter yout name">
@@ -54,7 +91,7 @@ echo "<br>" ;
         <input type="checkbox" value="reading" name="hobby[]"> Reading <br>
         <input type="checkbox" value="travelling" name="hobby[]"> Travelling <br>
         <input type="checkbox" value="running" name="hobby[]"> Running <br>
-        <input type="checkbox" value="coding" name="hobby[]" > Coding <br>
+        <input type="checkbox" value="coding" name="hobby[]"> Coding <br>
 
         <label for="country">Select yout country:</label>
         <select name="country" id="country">
@@ -67,7 +104,7 @@ echo "<br>" ;
 
         </select>
 
-        <input type="submit" , value="submit">
+        <input type="submit" name="submit" value="submit">
     </form>
 </body>
 

@@ -1,16 +1,13 @@
 
 
-function User() {
-    const fruits = [
-      { name: "apple", calories: 90 },
-      { name: "orange", calories: 40 },
-      { name: "banana", calories:35 },
-      { name: "coconut" , calories:55},
-      {name:"pineapple", calories:88}
-    ];
-
-    const items = fruits.map(fruit => <li> {fruit}</li> );
-    return(<ol>items</ol>);
+function User({name, age, location}) {
+    return (
+      <div className="student">
+        <p>Name:{name} </p>
+        <p>Age:{age} </p>
+        <p>Address:{location} </p>
+      </div>
+    );
 }
 
 export default User 

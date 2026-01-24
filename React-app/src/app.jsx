@@ -5,8 +5,8 @@ import User from './Greeting.jsx'
 function App() {
     return (
       <>
-      <User></User>
-     <h1>Fruit lists</h1>
+      <User name = "Bishal Shrestha" age = {21} location="Itahari-8"></User>
+      <User />
       </>
     );
 }

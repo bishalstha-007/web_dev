@@ -3,7 +3,6 @@
     font-size: 1.25em;
     padding: 5px;
     margin: 5px ;
-    border: 1px solid hsl(0, 1%, 29%);
+    border: 3px solid black;
 }
 
-.student 

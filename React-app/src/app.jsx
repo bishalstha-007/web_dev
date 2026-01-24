@@ -5,7 +5,8 @@ import User from './Greeting.jsx'
 function App() {
     return (
       <>
-      <User isLoggedIn={true} username="Bishal"> </User>
+      <User></User>
+     <h1>Fruit lists</h1>
       </>
     );
 }

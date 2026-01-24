@@ -1,11 +1,16 @@
 
 
-function User(props) {
-   return (props.isLoggedIn ? <h2> Welcome {props.username}</h2> :
-    <h2>
-        Please log in to continue``
-    </h2>
-   )
+function User() {
+    const fruits = [
+      { name: "apple", calories: 90 },
+      { name: "orange", calories: 40 },
+      { name: "banana", calories:35 },
+      { name: "coconut" , calories:55},
+      {name:"pineapple", calories:88}
+    ];
+
+    const items = fruits.map(fruit => <li> {fruit}</li> );
+    return(<ol>items</ol>);
 }
 
 export default User 

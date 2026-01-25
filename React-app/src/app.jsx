@@ -1,14 +1,15 @@
-// import Student from './student.jsx'
-import User from './Greeting.jsx'
-
+import {useState} from "react";
+import UserCard from "./Card.jsx"
 
 function App() {
-    return (
-      <>
-      <User name = "Bishal Shrestha" age = {21} location="Itahari-8"></User>
-      <User />
-      </>
-    );
+  const [name, setName] = useState("Bishal");
+
+  return(
+    <UserCard
+      name= {name} 
+     Change = {() => setName("bimal")}
+   />
+  );
 }
 
 export default App

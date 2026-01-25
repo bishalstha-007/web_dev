@@ -1,4 +1,4 @@
-
+// props
 
 function User({name, age, location}) {
     return (
